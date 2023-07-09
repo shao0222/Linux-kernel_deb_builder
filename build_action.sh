@@ -7,9 +7,9 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 
 # install dep
 sudo apt update
-sudo apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev
+sudo apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev neofetch
 sudo apt build-dep -y linux
-
+neofetch
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
@@ -42,5 +42,6 @@ sudo make bindeb-pkg -j"$CPU_CORES"
 
 # move deb packages to artifact dir
 cd ..
+rm -rfv *dbg*.deb
 mkdir "artifact"
 mv ./*.deb artifact/
