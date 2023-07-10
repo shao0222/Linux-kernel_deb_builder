@@ -4,10 +4,8 @@
 # VERSION=$(grep 'Kernel Configuration' < config | awk '{print $3}')
 sudo apt update
 sudo apt install gpg python3-pyquery -y
-git clone https://github.com/XXTX-TOP/Linux-kernel_deb_builder.git
-cd  Linux-kernel_deb_builder
+
 python3 get-newest-version.py 0
-cd ..
 VERSION=`cat /tmp/kernelversion.txt`
 URL=`cat /tmp/kernelurl.txt`
 MAINVERSION=`expr substr $VERSION 1 1`
@@ -18,7 +16,7 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 
 # install dep
 sudo apt update
-sudo apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev neofetch gpg python3-pyquery -y
+sudo apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev neofetch 
 
 sudo apt build-dep -y linux
 neofetch
