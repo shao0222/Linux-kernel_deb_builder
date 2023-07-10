@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # 获取最新的Linux内核版本
 import requests
 import re
+import time
+import os
+
+print(time.ctime(), os.uname().release)
 latest_kernel = None # 给 latest_kernel 赋一个初始值
 try:
     response = requests.get("https://www.kernel.org/")
