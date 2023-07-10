@@ -4,9 +4,10 @@
 # VERSION=$(grep 'Kernel Configuration' < config | awk '{print $3}')
 sudo apt update
 sudo apt install gpg python3-pyquery -y
-curl https://github.com/XXTX-TOP/Linux-kernel_deb_builder/get-newest-version.py
-python3 get-newest-version.py
-
+git clone https://github.com/XXTX-TOP/Linux-kernel_deb_builder.git
+cd  Linux-kernel_deb_builder
+python3 get-newest-version.py 0
+cd ..
 VERSION=`cat /tmp/kernelversion.txt`
 URL=`cat /tmp/kernelurl.txt`
 MAINVERSION=`expr substr $VERSION 1 1`
