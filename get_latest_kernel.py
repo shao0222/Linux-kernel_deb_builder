@@ -12,6 +12,13 @@ except requests.exceptions.RequestException as e:
     print(f"请求内核官网失败：{e}")
 except AttributeError as e:
     print(f"匹配内核版本失败：{e}")
+# 将最新的内核版本写入到文件中
+try:
+    with open("get_latest_kernel.txt", "w") as f: # 以写入模式打开文件
+        f.write(str(latest_kernel)) # 写入最新的内核版本，转换为字符串类型
+        print(f"已将最新的内核版本导出到 get_latest_kernel.txt 文件中")
+except IOError as e:
+    print(f"写入文件失败：{e}")
 # 获取当前的Linux内核版本
 import os
 current_kernel = None # 给 current_kernel 赋一个初始值
@@ -23,12 +30,3 @@ except OSError as e:
     print(f"获取内核版本失败：{e}")
 except AttributeError as e:
     print(f"匹配内核版本失败：{e}")
-# 比较两个版本
-if latest_kernel and current_kernel: # 检查两个变量是否都存在
-    if latest_kernel == current_kernel:
-        print("您已经安装了最新的Linux内核")
-    else:
-        print("您的Linux内核有更新可用")
-        # 在这里添加自动更新的代码，例如使用apt-get或者其他工具
-else:
-    print("无法比较两个版本")
