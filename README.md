@@ -29,4 +29,3 @@
 Enjoy～ 😁
 
 qq交流群：851323386
-![2023-06-04_12-07](https://github.com/XXTX-TOP/Linux-kernel_deb_builder/assets/69441812/1f737dc8-a4cd-4a22-8231-6681687cded4)
