@@ -66,24 +66,7 @@ scripts/config --set-val  DEBUG_INFO_NONE       y
 # source ../patch.d/*.sh
 
 
-    cd head
-    cat > deb/DEBIAN/control <<EOF
-Package: linux-kernel-xxtxtop
-Version: $VERSION
-Maintainer: xxtxtop <xxtxtop@gmail.com>
-Homepage: 
-Architecture: amd64
-Severity: serious
-Certainty: possible
-Check: binaries
-Type: binary, udeb
-Priority: optional
-Depends: linux-headers-$VERSION-amd64-desktop-xxtxtop, linux-image-$VERSION-amd64-desktop-xxtxtop
-Section: utils
-Installed-Size: 0
-Description: 内核（虚包）
-EOF
-cd ..
+
 # build deb packages
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 sudo make bindeb-pkg -j"$CPU_CORES"
