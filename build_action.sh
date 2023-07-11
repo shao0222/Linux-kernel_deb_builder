@@ -73,7 +73,7 @@ CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 sudo make bindeb-pkg -j"$CPU_CORES"
 
 # move deb packages to artifact dir
-
+cd ..
 mkdir "artifact"
 mkdir kernel/$SHOWVERSION
 rm -rfv *dbg*.deb
