@@ -23,12 +23,12 @@ jobs:
       - name: Build
         run: bash build_action.sh
 
-        - name: Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3
 
-          - name: Run Python script
+      - name: Run Python script
           run: python3 get_latest_kernel.py 
 
 
