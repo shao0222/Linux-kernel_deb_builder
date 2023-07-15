@@ -4,6 +4,9 @@ current_time=$(date +"%Y-%m-%d %H:%M:%S")
 # 追加当前时间到文件
 echo "$current_time" >> time.txt
 
+# 删除第一行
+sed -i '1d' time.txt
+
 git config user.name "XXTXTOP"
 git config user.email "xxtxtop@gmail.com"
 git add .
@@ -21,6 +24,7 @@ echo "$commit_message" | git commit -F - --no-edit
 git pull origin main
 echo "$commit_message" | git commit -F - --no-edit
 git push origin main
+
 # 检查git命令的返回状态
 if [ $? -eq 0 ]; then
     echo "Git push successful."
