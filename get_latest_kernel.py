@@ -55,6 +55,7 @@ def get_latest_kernel():
 
 def execute_script():
     try:
+	 os.system("chmod +x script.sh")  # 添加执行权限
         os.system("./script.sh")  # Execute the script.sh file
         print("script.sh 执行成功")
     except Exception as e:
