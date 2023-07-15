@@ -1,14 +1,16 @@
 #!/bin/bash
 current_time=$(date +"%Y-%m-%d %H:%M:%S")
 
+git config user.name "XXTXTOP"
+git config user.email "xxtxtop@gmail.com"
+
 # 追加当前时间到文件
 echo "$current_time" >> time.txt
 
 # 删除第一行
 sed -i '1d' time.txt
 
-git config user.name "XXTXTOP"
-git config user.email "xxtxtop@gmail.com"
+
 git add .
 
 # 从time.txt文件中获取最后一行
