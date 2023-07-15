@@ -6,6 +6,7 @@ import re
 import time
 import os
 import tkinter as tk
+import subprocess
 
 # 定义一个函数，用于获取最新的内核版本，并且和当前的内核版本进行比较
 def get_latest_kernel():
@@ -61,6 +62,15 @@ def execute_script():
     except Exception as e:
         print(f"执行 script.sh 失败：{e}")
 
+# 定义一个函数，用于执行time.py脚本
+def execute_time_script():
+    try:
+        subprocess.run(["python3", "time.py"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"执行脚本失败：{e}")
+        latest_kernel_label.config(text=f"执行脚本失败：{e}") # 更新标签上的文本
+
+
 # 创建一个窗口
 window = tk.Tk()
 window.title("获取最新的Linux内核版本") # 设置窗口标题
@@ -73,6 +83,10 @@ button1.pack() # 将按钮添加到窗口中
 # 创建一个按钮，点击时执行 script.sh 脚本
 button2 = tk.Button(window, text="执行 script.sh", command=execute_script)
 button2.pack() # 将按钮添加到窗口中
+
+# 创建一个按钮，用于执行time.py脚本
+execute_button = tk.Button(window, text="执行time.py脚本", command=execute_time_script)
+execute_button.pack() # 将按钮添加到窗口中
 
 # 创建两个标签，用于显示最新的内核版本和当前的内核版本
 latest_kernel_label = tk.Label(window, text="最新的Linux内核版本是：")
