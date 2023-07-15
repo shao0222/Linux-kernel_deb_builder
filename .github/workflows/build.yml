@@ -6,9 +6,6 @@ jobs:
     name: Build kernel
     runs-on: ubuntu-latest
     steps:
-
-
-
       - name: Maximize build space
         uses: easimon/maximize-build-space@master
         with:
