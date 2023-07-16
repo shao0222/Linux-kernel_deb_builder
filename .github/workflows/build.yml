@@ -58,8 +58,7 @@ jobs:
           git config user.email "xxtxtop@gmail.com"
           ls -al
           pwd
-          #cd ..
-          #git add /*.txt
-          #git commit -m "Create file with kernel version"
-          #git push origin testing
+          git add /*.txt
+          git commit -m "Create file with kernel version"
+          git push origin testing
 
