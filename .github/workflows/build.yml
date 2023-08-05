@@ -18,9 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - uses: actions/setup-node@v3
-        runs:
-          using: 'node16'
-          main: 'main.js'
         with:
           node-version: '16'
       - name: Install curl and jq
