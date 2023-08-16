@@ -16,7 +16,10 @@ jobs:
           remove-android: 'true'
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
       - name: Install curl and jq
         run: |
           sudo apt-get update
@@ -39,8 +42,6 @@ jobs:
 
       - name: Build
         run: bash build_action.sh
-
-
 
 
       - name: Artifact

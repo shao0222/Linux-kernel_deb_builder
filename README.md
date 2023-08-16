@@ -28,6 +28,3 @@
 
 在您的仓库页面的 `Actions`里面下载[artifact](https://github.com/XXTX-TOP/Linux-kernel_deb_builder/suites/13914141709/artifacts/774503646) 【示例】，然后解压安装后通过sudo dpkg -i +包名 即可
 
-Enjoy～ 😁
-
-qq交流群：851323386
