@@ -27,7 +27,7 @@ neofetch
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$mainline".tar.gz 
+wget $mainlineurl
 if [[ -f linux-"$mainline".tar.xz ]]; then
     tar -xvf linux-"$mainline".tar.xz
 fi
@@ -82,7 +82,9 @@ stable=`cat /tmp/stable.txt`
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$stable".tar.gz    
+stableurl=`cat /tmp/stableurl.txt`
+
+wget $stableurl    
 if [[ -f linux-"$stable".tar.xz ]]; then
     tar -xvf linux-"$stable".tar.xz
 fi
@@ -126,7 +128,9 @@ longterm=`cat /tmp/longterm.txt`
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$longterm".tar.gz    
+longtermurl=`cat /tmp/longtermurl.txt`
+
+wget $longtermurl   
 if [[ -f linux-"$longterm".tar.xz ]]; then
     tar -xvf linux-"$longterm".tar.xz
 fi
