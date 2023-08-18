@@ -74,6 +74,60 @@ sudo make bindeb-pkg -j"$CPU_CORES"
 
 # move deb packages to artifact dir
 cd ..
+
+
+VERSIONS=`cat get_latest_kernel.txt`
+
+# change dir to workplace
+cd "${GITHUB_WORKSPACE}" || exit
+
+wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$VERSIONS".tar.gz    
+if [[ -f linux-"$VERSIONS".tar.xz ]]; then
+    tar -xvf linux-"$VERSIONS".tar.xz
+fi
+if [[ -f linux-"$VERSIONS".tar.gz ]]; then
+    tar -xvf linux-"$VERSIONS".tar.gz
+fi
+if [[ -f linux-"$VERSIONS".tar ]]; then
+    tar -xvf linux-"$VERSIONS".tar
+fi
+if [[ -f linux-"$VERSIONS".bz2 ]]; then
+    tar -xvf linux-"$VERSIONS".tar.bz2
+fi
+cd linux-"$VERSIONS" || exit
+
+
+
+# download kernel source
+# wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-6.4.tar.gz  
+# tar -xf linux-"$VERSION".tar.gz
+# cd linux-"$VERSION" || exit
+
+# copy config file
+cp ../config .config
+#
+# disable DEBUG_INFO to speedup build
+# scripts/config --disable DEBUG_INFO 
+scripts/config --set-str SYSTEM_TRUSTED_KEYS ""
+scripts/config --set-str SYSTEM_REVOCATION_KEYS ""
+scripts/config --undefine DEBUG_INFO
+scripts/config --undefine DEBUG_INFO_COMPRESSED
+scripts/config --undefine DEBUG_INFO_REDUCED
+scripts/config --undefine DEBUG_INFO_SPLIT
+scripts/config --undefine GDB_SCRIPTS
+scripts/config --set-val  DEBUG_INFO_DWARF5     n
+scripts/config --set-val  DEBUG_INFO_NONE       y
+
+# build deb packages
+CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
+sudo make bindeb-pkg -j"$CPU_CORES"
+
+# move deb packages to artifact dir
+cd ..
+
+
+
+
 mkdir "artifact"
 mkdir kernel/$SHOWVERSION
 rm -rfv *dbg*.deb
