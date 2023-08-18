@@ -29,7 +29,7 @@ cd "${GITHUB_WORKSPACE}" || exit
 
 wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$mainline".tar.gz 
 if [[ -f linux-"$mainline".tar.xz ]]; then
-    tar -xvf linux-"mainline".tar.xz
+    tar -xvf linux-"$mainline".tar.xz
 fi
 if [[ -f linux-"$mainline".tar.gz ]]; then
     tar -xvf linux-"$mainline".tar.gz
