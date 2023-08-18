@@ -27,20 +27,20 @@ neofetch
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"mainline".tar.gz 
-if [[ -f linux-"mainline".tar.xz ]]; then
+wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$mainline".tar.gz 
+if [[ -f linux-"$mainline".tar.xz ]]; then
     tar -xvf linux-"mainline".tar.xz
 fi
-if [[ -f linux-"mainline".tar.gz ]]; then
-    tar -xvf linux-"mainline".tar.gz
+if [[ -f linux-"$mainline".tar.gz ]]; then
+    tar -xvf linux-"$mainline".tar.gz
 fi
-if [[ -f linux-"mainline".tar ]]; then
-    tar -xvf linux-"mainline".tar
+if [[ -f linux-"$mainline".tar ]]; then
+    tar -xvf linux-"$mainline".tar
 fi
-if [[ -f linux-"mainline".bz2 ]]; then
-    tar -xvf linux-"mainline".tar.bz2
+if [[ -f linux-"$mainline".bz2 ]]; then
+    tar -xvf linux-"$mainline".tar.bz2
 fi
-cd linux-"mainline" || exit
+cd linux-"$mainline" || exit
 
 
 
@@ -82,20 +82,20 @@ stable=`cat /tmp/stable.txt`
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"stable".tar.gz    
-if [[ -f linux-"stable".tar.xz ]]; then
-    tar -xvf linux-"stable".tar.xz
+wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$stable".tar.gz    
+if [[ -f linux-"$stable".tar.xz ]]; then
+    tar -xvf linux-"$stable".tar.xz
 fi
-if [[ -f linux-"stable".tar.gz ]]; then
-    tar -xvf linux-"stable".tar.gz
+if [[ -f linux-"$stable".tar.gz ]]; then
+    tar -xvf linux-"$stable".tar.gz
 fi
-if [[ -f linux-"stable".tar ]]; then
-    tar -xvf linux-"stable".tar
+if [[ -f linux-"$stable".tar ]]; then
+    tar -xvf linux-"$stable".tar
 fi
-if [[ -f linux-"stable".bz2 ]]; then
-    tar -xvf linux-"stable".tar.bz2
+if [[ -f linux-"$stable".bz2 ]]; then
+    tar -xvf linux-"$stable".tar.bz2
 fi
-cd linux-"stable" || exit
+cd linux-"$stable" || exit
 
 
 # copy config file
@@ -126,20 +126,20 @@ longterm=`cat /tmp/longterm.txt`
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"longterm".tar.gz    
-if [[ -f linux-"longterm".tar.xz ]]; then
-    tar -xvf linux-"longterm".tar.xz
+wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$longterm".tar.gz    
+if [[ -f linux-"$longterm".tar.xz ]]; then
+    tar -xvf linux-"$longterm".tar.xz
 fi
-if [[ -f linux-"longterm".tar.gz ]]; then
-    tar -xvf linux-"longterm".tar.gz
+if [[ -f linux-"$longterm".tar.gz ]]; then
+    tar -xvf linux-"$longterm".tar.gz
 fi
-if [[ -f linux-"longterm".tar ]]; then
-    tar -xvf linux-"longterm".tar
+if [[ -f linux-"$longterm".tar ]]; then
+    tar -xvf linux-"$longterm".tar
 fi
-if [[ -f linux-"longterm".bz2 ]]; then
-    tar -xvf linux-"longterm".tar.bz2
+if [[ -f linux-"$longterm".bz2 ]]; then
+    tar -xvf linux-"$longterm".tar.bz2
 fi
-cd linux-"longterm" || exit
+cd linux-"$longterm" || exit
 
 
 # copy config file
