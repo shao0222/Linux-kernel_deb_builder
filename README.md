@@ -39,3 +39,27 @@
 #### 7、后续发展计划
 
 备忘录：写一个管理我方内核的工具，至少包括安装卸载指定版本，以及删除所有我方内核、删除所有除我方内核。
+
+#### 8、依赖
+
+| 组件        | 官网                                                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| wget        | [Wget - GNU Project - Free Software Foundation](https://www.gnu.org/software/wget/)                                               |
+| xz-utils    | [XZ Utils (tukaani.org)](https://tukaani.org/xz/)                                                                                 |
+| make        | [Make - GNU Project - Free Software Foundation](https://www.gnu.org/software/make/)                                               |
+| gcc         | [GCC, the GNU Compiler Collection - GNU Project](https://gcc.gnu.org/)                                                            |
+| flex        | [westes/flex: The Fast Lexical Analyzer - scanner generator for lexing in C and C++ (github.com)](https://github.com/westes/flex) |
+| bison       | [Bison - GNU Project - Free Software Foundation](https://www.gnu.org/software/bison/)                                             |
+| dpkg-dev    | [Dpkg — Debian Package Manager](https://www.dpkg.org/)                                                                           |
+| bc          | [bc - GNU Project - Free Software Foundation](https://www.gnu.org/software/bc/)                                                   |
+| rsync       | [rsync (samba.org)](https://rsync.samba.org/)                                                                                     |
+| kmod        |                                                                                                                                |
+| cpio        | [Cpio - GNU Project - Free Software Foundation](https://www.gnu.org/software/cpio/)                                               |
+| libssl-dev  | [openssl/openssl: TLS/SSL and crypto library (github.com)](https://github.com/openssl/openssl)                                    |
+| git         | [Git - Downloading Package (git-scm.com)](https://git-scm.com/download/win)                                                       |
+| lsb         | [LSB Specifications (linuxfoundation.org)](https://refspecs.linuxfoundation.org/lsb.shtml)                                        |
+| vim         | [welcome home : vim online](https://www.vim.org/)                                                                                 |
+| libelf-dev  |                                                                                                                                |
+| python3-pip | [pip · PyPI](https://pypi.org/project/pip/)                                                                                      |
+| python3-tk  | [tkinter — Python interface to Tcl/Tk — Python 3.11.4 documentation](https://docs.python.org/3/library/tkinter.html)            |
+| debhelper   | [debhelper(7) — debhelper — Debian jessie — Debian Manpages](https://manpages.debian.org/jessie/debhelper/debhelper.7.en.html) |
