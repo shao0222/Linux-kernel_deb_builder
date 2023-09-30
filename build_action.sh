@@ -1,23 +1,16 @@
 #!/usr/bin/env bash
 
-
-sudo apt update
-sudo apt install gpg python3-pyquery -y
-
 python3 get-newest-version.py 0
 python3 get-newest-version.py 1
 python3 get-newest-version.py 2
 mainline=`cat /tmp/mainline.txt`
 mainlineurl=`cat /tmp/mainlineurl.txt`
 MAINVERSION=`expr substr mainline 1 1`
-SHOWVERSION=mainline
+SHOWVERSION=DEB
 
 # add deb-src to sources.list
 sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 
-# install dep
-sudo apt update
-sudo apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev neofetch python3-pip python3-tk debhelper
 pip3 install requests wget ttkthemes
 
 sudo apt build-dep -y linux

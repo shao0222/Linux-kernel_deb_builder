@@ -20,10 +20,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install curl and jq
+      - name: install dep
         run: |
           sudo apt-get update
-          sudo apt-get install -y curl jq
+          sudo apt-get install -y curl jq gpg python3-pyquery wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev neofetch python3-pip python3-tk debhelper
 
       - name: Update Kernel
         id: update-kernel
