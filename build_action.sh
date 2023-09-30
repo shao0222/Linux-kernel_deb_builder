@@ -44,30 +44,8 @@ cd linux-"$mainline" || exit
 
 # copy config file
 cp ../config .config
-#
-# disable DEBUG_INFO to speedup build
-# scripts/config --disable DEBUG_INFO 
-scripts/config --disable DEBUG_INFO_X86
-scripts/config --disable DEBUG_INFO_VMCORE
-scripts/config --disable DEBUG_INFO_SPLIT
-scripts/config --disable DEBUG_INFO_BTF_MODULES
-scripts/config --disable DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
-scripts/config --disable DEBUG_INFO_PERF
-scripts/config --disable DEBUG_INFO_BTF
-scripts/config --disable DEBUG_INFO_DWARF4
-scripts/config --disable DEBUG_INFO_REDUCED
-scripts/config --set-str SYSTEM_TRUSTED_KEYS "" 
-scripts/config --set-str SYSTEM_REVOCATION_KEYS "" 
-scripts/config --undefine DEBUG_INFO 
-scripts/config --undefine DEBUG_INFO_COMPRESSED 
-scripts/config --undefine DEBUG_INFO_REDUCED 
-scripts/config --undefine DEBUG_INFO_SPLIT 
-scripts/config --undefine GDB_SCRIPTS 
-scripts/config --set-val DEBUG_INFO_DWARF5 n 
-scripts/config --set-val DEBUG_INFO_NONE y 
-# apply patches
-# shellcheck source=src/util.sh
-# source ../patch.d/*.sh
+
+sudo bash config_setup.sh
 
 
 
@@ -104,27 +82,8 @@ cd linux-"$stable" || exit
 
 # copy config file
 cp ../config .config
-#
-# disable DEBUG_INFO to speedup build
-# scripts/config --disable DEBUG_INFO 
-scripts/config --disable DEBUG_INFO_X86
-scripts/config --disable DEBUG_INFO_VMCORE
-scripts/config --disable DEBUG_INFO_SPLIT
-scripts/config --disable DEBUG_INFO_BTF_MODULES
-scripts/config --disable DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
-scripts/config --disable DEBUG_INFO_PERF
-scripts/config --disable DEBUG_INFO_BTF
-scripts/config --disable DEBUG_INFO_DWARF4
-scripts/config --disable DEBUG_INFO_REDUCED
-scripts/config --set-str SYSTEM_TRUSTED_KEYS "" 
-scripts/config --set-str SYSTEM_REVOCATION_KEYS "" 
-scripts/config --undefine DEBUG_INFO 
-scripts/config --undefine DEBUG_INFO_COMPRESSED 
-scripts/config --undefine DEBUG_INFO_REDUCED 
-scripts/config --undefine DEBUG_INFO_SPLIT 
-scripts/config --undefine GDB_SCRIPTS 
-scripts/config --set-val DEBUG_INFO_DWARF5 n 
-scripts/config --set-val DEBUG_INFO_NONE y 
+
+sudo bash config_setup.sh
 
 # build deb packages
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
@@ -159,27 +118,7 @@ cd linux-"$longterm" || exit
 
 # copy config file
 cp ../config .config
-#
-# disable DEBUG_INFO to speedup build
-# scripts/config --disable DEBUG_INFO 
-scripts/config --disable DEBUG_INFO_X86
-scripts/config --disable DEBUG_INFO_VMCORE
-scripts/config --disable DEBUG_INFO_SPLIT
-scripts/config --disable DEBUG_INFO_BTF_MODULES
-scripts/config --disable DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
-scripts/config --disable DEBUG_INFO_PERF
-scripts/config --disable DEBUG_INFO_BTF
-scripts/config --disable DEBUG_INFO_DWARF4
-scripts/config --disable DEBUG_INFO_REDUCED
-scripts/config --set-str SYSTEM_TRUSTED_KEYS "" 
-scripts/config --set-str SYSTEM_REVOCATION_KEYS "" 
-scripts/config --undefine DEBUG_INFO 
-scripts/config --undefine DEBUG_INFO_COMPRESSED 
-scripts/config --undefine DEBUG_INFO_REDUCED 
-scripts/config --undefine DEBUG_INFO_SPLIT 
-scripts/config --undefine GDB_SCRIPTS 
-scripts/config --set-val DEBUG_INFO_DWARF5 n 
-scripts/config --set-val DEBUG_INFO_NONE y 
+sudo bash config_setup.sh
 
 # build deb packages
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
@@ -187,7 +126,6 @@ sudo make bindeb-pkg -j"$CPU_CORES"
 
 # move deb packages to artifact dir
 cd ..
-
 
 mkdir "artifact"
 mkdir kernel/$SHOWVERSION
