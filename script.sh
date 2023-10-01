@@ -5,7 +5,7 @@ git config user.name "XXTXTOP"
 git config user.email "xxtxtop@gmail.com"
 
 # 追加当前时间到文件
-sudo echo "$current_time" >> time.txt
+echo "$current_time" >> time.txt
 
 # 删除第一行
 sed -i '1d' time.txt
