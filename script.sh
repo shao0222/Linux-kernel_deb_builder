@@ -11,7 +11,7 @@ echo "$current_time" >> time.txt
 sed -i '1d' time.txt
 
 
-git add *.txt create_file.sh get_latest_kernel.py script.sh
+git add *.txt create_file.sh get_latest_kernel.py script.sh time.py time.txt
 
 # 从time.txt文件中获取最后一行
 commit_message=$(tail -n 1 time.txt)
