@@ -25,21 +25,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y curl jq gpg python3-pyquery wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev git lsb vim libelf-dev neofetch python3-pip python3-tk debhelper
 
-      - name: Update Kernel
-        id: update-kernel
-        run: |
-          latest_tag=$(curl -sS https://www.kernel.org/releases.json | jq -r '.latest_stable.version')
-          echo "Latest Linux Kernel version: $latest_tag"
-          echo "echo \"$latest_tag\" > temp_file.txt" >> create_file.sh
-          chmod +x create_file.sh
-          ./create_file.sh  # 执行脚本以创建临时文件1
-
-      - name: Rename File
-        run: |
-          latest_tag=$(cat temp_file.txt)
-          mv temp_file.txt "$latest_tag.txt"  # 将临时文件重命名为以版本号命名的文件
-
-
       - name: Build
         run: bash build_action.sh
 
@@ -65,7 +50,9 @@ jobs:
           cp /tmp/stableurl.txt ${{ github.workspace }}/txt/stableurl.txt
           cp /tmp/longterm.txt ${{ github.workspace }}/txt/longterm.txt
           cp /tmp/longtermurl.txt ${{ github.workspace }}/txt/longtermurl.txt 
+          
           git add ${{ github.workspace }}/txt/mainline.txt  ${{ github.workspace }}/txt/mainlineurl.txt ${{ github.workspace }}/txt/stable.txt ${{ github.workspace }}/txt/stableurl.txt ${{ github.workspace }}/txt/longterm.txt ${{ github.workspace }}/txt/longtermurl.txt
+
           git commit -m "Create file with kernel version"
           git push 
 
