@@ -18,7 +18,7 @@ scripts/config --undefine DEBUG_INFO_SPLIT
 scripts/config --undefine GDB_SCRIPTS 
 scripts/config --set-val DEBUG_INFO_DWARF5 n 
 scripts/config --set-val DEBUG_INFO_NONE y 
-
+:<<EOF
 # 支持2.4G无线键盘
 # <*> USB HID transport layer
 scripts/config -e CONFIG_USB_HID
@@ -32,3 +32,4 @@ scripts/config -e CONFIG_TICK_CPU_ACCOUNTING
 # 桌面系统的“鸡血补丁”，开启后能显著降低操作延迟、提升程序响应速度
 # [*] Automatic process group schedulin [CONFIG_SCHED_AUTOGROUP]
 scripts/config -e CONFIG_SCHED_AUTOGROUP
+EOF

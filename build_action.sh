@@ -6,7 +6,7 @@ python3 get-newest-version.py 2
 mainline=`cat /tmp/mainline.txt`
 mainlineurl=`cat /tmp/mainlineurl.txt`
 MAINVERSION=`expr substr mainline 1 1`
-SHOWVERSION=DEB
+SHOWVERSION=mainline
 
 # add deb-src to sources.list
 sed -i "/deb-src/s/# //g" /etc/apt/sources.list
