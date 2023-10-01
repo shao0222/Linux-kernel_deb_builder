@@ -92,7 +92,7 @@ sudo make bindeb-pkg -j"$CPU_CORES"
 # move deb packages to artifact dir
 cd ..
 
-
+:<<EOF
 longterm=`cat /tmp/longterm.txt`
 
 # change dir to workplace
@@ -126,7 +126,7 @@ sudo make bindeb-pkg -j"$CPU_CORES"
 
 # move deb packages to artifact dir
 cd ..
-
+EOF
 mkdir "artifact"
 mkdir kernel/$SHOWVERSION
 rm -rfv *dbg*.deb
