@@ -5,7 +5,7 @@ git config user.name "XXTXTOP"
 git config user.email "xxtxtop@gmail.com"
 
 # 追加当前时间到文件
-echo "$current_time" >> time.txt
+sudo echo "$current_time" >> time.txt
 
 # 删除第一行
 sed -i '1d' time.txt
@@ -23,10 +23,9 @@ export GIT_EDITOR=true
 echo "$commit_message" | git commit -F - --no-edit
 
 # 推送提交到远程仓库
-git pull origin testing
+git pull 
 echo "$commit_message" | git commit -F - --no-edit
-git push origin testing
-
+git push 
 # 检查git命令的返回状态
 if [ $? -eq 0 ]; then
     echo "Git push successful."
