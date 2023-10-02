@@ -188,3 +188,8 @@ mv ./*.deb kernel/$SHOWVERSION
 cd kernel/$SHOWVERSION
 #mv ./* ../artifact/
 mv ./*.deb artifact/
+
+git clone git@github.com:XXTX-TOP/ppa.git
+ls -al
+pwd
+cp artifact/*.deb ppa/kernel/
