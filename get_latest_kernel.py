@@ -95,7 +95,7 @@ current_kernel_label = tk.Label(window, text="当前的Linux内核版本是：")
 current_kernel_label.pack() # 将标签添加到窗口中
 
 # 创建两个标签，用于显示作者信息和内核版本来源
-author_label = tk.Label(window, text="作者：XXTXTOP")
+author_label = tk.Label(window, text="作者:Kernel-Builder SIG")
 author_label.pack(side=tk.LEFT) # 将标签添加到窗口中，并放在左边
 source_label = tk.Label(window, text="内核版本来源：https://www.kernel.org/")
 source_label.pack(side=tk.RIGHT) # 将标签添加到窗口中，并放在右边
