@@ -182,9 +182,8 @@ sudo make bindeb-pkg -j"$CPU_CORES"
 cd ..
 EOF
 mkdir "artifact"
-mkdir -p kernel/$SHOWVERSION
+
 rm -rfv *dbg*.deb
-mv ./*.deb kernel/$SHOWVERSION
-cd kernel/$SHOWVERSION
+
 #mv ./* ../artifact/
 mv ./*.deb artifact/
