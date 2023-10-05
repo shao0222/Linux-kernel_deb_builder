@@ -35,9 +35,14 @@ jobs:
           name: artifact
           path: ${{ github.workspace }}/artifact/
           
+      - name: Compare files
+        id: compare
+        run: |
+          cmp --silent txt/longterm.txt /tmp/longterm.txt && cmp --silent txt/mainline.txt /tmp/mainline.txt && cmp --silent txt/stable.txt /tmp/stable.txt && echo "::set-output name=skip::true" || echo "::set-output name=skip::false"
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        if: ${{ steps.compare.outputs.skip != 'true' }}
         run: |
           git config user.name "XXTXTOP"
           git config user.email "xxtxtop@gmail.com"
