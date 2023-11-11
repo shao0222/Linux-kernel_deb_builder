@@ -10,7 +10,7 @@
 
 ``` g++ -o install_kernel install_kernel.cpp -lstdc++fs -static-libstdc++  ``` 
 
-来编译出install_kernel 文件，并实现本地的编译（尝试使用静态链接库而不是动态链接库），目前还为测试通过
+来编译出install_kernel 文件，并实现本地的编译（尝试使用静态链接库而不是动态链接库），目前还未测试通过
 
 
 # 如何使用
