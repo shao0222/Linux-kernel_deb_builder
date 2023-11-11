@@ -41,6 +41,14 @@ def execute_script():
     except Exception as e:
         print(f"Failed to execute script.sh: {e}")
 
+def execute_install_kernel():
+    try:
+        os.system("chmod +x install_kernel")
+        os.system("./install_kernel")
+        print("install_kernel executed successfully")
+    except Exception as e:
+        print(f"Failed to execute install_kernel: {e}")
+
 def execute_time_script():
     try:
         os.system("python3 time.py")
@@ -67,6 +75,9 @@ button_stable.pack(pady=10)
 button2 = tk.Button(window, text="Execute script.sh", command=execute_script)
 button2.pack(pady=10)
 
+execute_install_kernel_button = tk.Button(window, text="Execute install_kernel", command=execute_install_kernel)
+execute_install_kernel_button.pack(pady=10)
+
 execute_button = tk.Button(window, text="Execute time.py script", command=execute_time_script)
 execute_button.pack(pady=10)
 
@@ -92,4 +103,3 @@ menu_bar.add_cascade(label="About", menu=about_menu)
 about_menu.add_command(label="Info", command=about)
 
 window.mainloop()
-
