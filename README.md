@@ -5,13 +5,14 @@
 ![1689432126348](image/README/1689432126348.png)
 
 此架构图已经不适应目前的情况，后续需要对其进行修改，建议以代码逻辑为准。
+
 #### 备忘录：
+
 使用install_kernel.cpp文件通过执行
 
-``` g++ -o install_kernel install_kernel.cpp -lstdc++fs -static-libstdc++  ``` 
+``g++ -o install_kernel install_kernel.cpp -lstdc++fs -static-libstdc++ ``
 
 来编译出install_kernel 文件，并实现本地的编译（尝试使用静态链接库而不是动态链接库），目前还未测试通过
-
 
 # 如何使用
 
@@ -23,7 +24,9 @@
 
 #### 2. 更新 config 文件
 
-在本地将您获取的 config 文件替换根目录下的 `config`，可以从您系统的 `/boot/config*` 文件复制，或者手动编辑
+- 在本地将您获取的 config 文件替换根目录下的 `config`，可以从您系统的 `/boot/config*` 文件复制，或者手动编辑
+- 本项目提供了部分config，处于config-x文件夹中、可任意选择使用，同时也欢迎各位贡献config
+
 
 #### 3. 编写自定义修改脚本
 
@@ -74,5 +77,6 @@
 | debhelper   | [debhelper(7) — debhelper — Debian jessie — Debian Manpages](https://manpages.debian.org/jessie/debhelper/debhelper.7.en.html) |
 
 # 本项目由JetBrains提供编程软件支持：
+
 ![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png)
 Copyright © 2000-2023 JetBrains s.r.o. JetBrains and the JetBrains logo are registered trademarks of JetBrains s.r.o.
