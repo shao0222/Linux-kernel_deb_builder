@@ -187,3 +187,4 @@ rm -rfv *dbg*.deb
 
 #mv ./* ../artifact/
 mv ./*.deb artifact/
+sudo bash Install-deb.sh

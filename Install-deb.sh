@@ -3,8 +3,8 @@
 # 定义 deb 包的后缀
 suffix=".deb"
 
-# 进入 deb 目录
-cd deb
+# 进入 artifact 目录
+cd artifact
 
 # 获取所有 deb 包的文件名，用空格分隔
 DEBS=$(ls *.deb)
