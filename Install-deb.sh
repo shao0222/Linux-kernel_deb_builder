@@ -37,5 +37,5 @@ for DEB in $DEBS; do
   # 提示开始执行 ~/installDeb.sh 脚本
   echo "Execute ~/installDeb.sh $DEB"
   # 执行 ~/installDeb.sh 脚本，传入 deb 包的文件名作为参数
-  ~/installDeb.sh $DEB
+  sudo ~/Install-deb.sh $DEB
 done
