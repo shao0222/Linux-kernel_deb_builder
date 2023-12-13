@@ -35,7 +35,7 @@ for DEB in $DEBS; do
   # 使用 rm 命令删除解压和转换过程中生成的临时文件
   rm debian-binary control.tar.xz data.tar.xz control.tar.zst data.tar.zst
   # 提示开始执行 ~/installDeb.sh 脚本
-  echo "Execute ~/installDeb.sh $DEB"
+  # echo "Execute ~/installDeb.sh $DEB"
   # 执行 ~/installDeb.sh 脚本，传入 deb 包的文件名作为参数
-  sudo ~/Install-deb.sh $DEB
+  #sudo ~/Install-deb.sh $DEB
 done
